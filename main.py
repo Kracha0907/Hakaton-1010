@@ -4,6 +4,7 @@ from PyQt5 import uic
 from recommend import Recommend
 from complain import Complain
 from profil import Profil
+from voting import Voting
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
@@ -20,6 +21,8 @@ class Main(QMainWindow):
         self.btn_complain.clicked.connect(self.complain)
         self.btn_profil.setStyleSheet('QPushButton {background-color: #A3C1DA}')
         self.btn_profil.clicked.connect(self.profil)
+        self.btn_voting.setStyleSheet('QPushButton {background-color: #A3C1DA}')
+        self.btn_voting.clicked.connect(self.voting)
         self.btn_backToAutentification.setStyleSheet('QPushButton {background-color: #A3C1DA}')
         self.btn_backToAutentification.clicked.connect(self.backToAutentification)
 
@@ -34,6 +37,10 @@ class Main(QMainWindow):
     def profil(self): # Переход во вкладку "Профиль"
         self.m3 = Profil(self)
         self.m3.show()
+
+    def voting(self):
+        self.m4 = Voting(self)
+        self.m4.show()
 
     def backToAutentification(self):  # Вернуться назад
         self.close()

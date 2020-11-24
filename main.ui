@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="btn_recommend">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>80</y>
+      <x>30</x>
+      <y>20</y>
       <width>261</width>
       <height>141</height>
      </rect>
@@ -38,8 +38,8 @@
    <widget class="QPushButton" name="btn_complain">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>80</y>
+      <x>390</x>
+      <y>20</y>
       <width>271</width>
       <height>141</height>
      </rect>
@@ -57,9 +57,9 @@
    <widget class="QPushButton" name="btn_profil">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>260</y>
-      <width>201</width>
+      <x>30</x>
+      <y>180</y>
+      <width>261</width>
       <height>91</height>
      </rect>
     </property>
@@ -76,8 +76,8 @@
    <widget class="QPushButton" name="btn_backToAutentification">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>440</y>
+      <x>180</x>
+      <y>320</y>
       <width>331</width>
       <height>61</height>
      </rect>
@@ -90,6 +90,25 @@
     </property>
     <property name="text">
      <string>На страницу аутентификации</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_voting">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>180</y>
+      <width>271</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Голосование</string>
     </property>
    </widget>
   </widget>

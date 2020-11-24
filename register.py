@@ -27,7 +27,7 @@ class Register(QMainWindow):
         self.btn_getCode.clicked.connect(self.getCode)
         self.btn_exit.clicked.connect(self.exit)
 
-    def getCode(self): # Отправка кода на почту
+    def getCode(self):  # Отправка кода на почту
         try:
             smtpObj = smtplib.SMTP('smtp.mail.ru', 25)
             smtpObj.starttls()
@@ -37,12 +37,12 @@ class Register(QMainWindow):
             self.label_code.show()
             self.edit_code.show()
             self.btn_verify.show()
-            self.btn_verify.clicked.connect(self.verify) # Если нажата кнопка войти происходит проверка кода
+            self.btn_verify.clicked.connect(self.verify)  # Если нажата кнопка войти происходит проверка кода
         except:
             QMessageBox.about(self, "Ошибка!", "Проверьте соединение с Интернетом или правильность почтового адреса")
         return False
 
-    def verify(self): # Проверка кода
+    def verify(self):  # Проверка кода
         if self.message == self.edit_code.text():
             self.label_login.show()
             self.edit_login.show()
@@ -53,7 +53,7 @@ class Register(QMainWindow):
         else:
             QMessageBox.about(self, "Ошибка!", "Неверный код. Попробуйте еще раз")
 
-    def register(self): # Регистрация пользователя
+    def register(self):  # Регистрация пользователя
         con = sqlite3.connect("users_db.sqlite")
         cur = con.cursor()
         login = cur.execute("""SELECT login from users WHERE login = ?""", (self.edit_login.text(),)).fetchall()
@@ -65,13 +65,13 @@ class Register(QMainWindow):
             cur.execute("""UPDATE login_now SET login = ? WHERE id = ?""", (self.edit_login.text(), 1))
             con.commit()
             con.close()
-            self.reg1 = Main(self) # Переход на главную страницу
+            self.reg1 = Main(self)  # Переход на главную страницу
             self.reg1.show()
         else:
             QMessageBox.about(self, "Ошибка!", "Пользователь с таким логином уже существует. "
                                                "Вернитесь назад и войдите в свою учетную запись")
 
-    def exit(self): # Возвращение назад
+    def exit(self):  # Возвращение назад
         self.close()
 
 
